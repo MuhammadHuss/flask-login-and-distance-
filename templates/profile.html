@@ -3,5 +3,23 @@
 {% block content %}
 <h1 class="title">
   Welcome, {{name}}!
+  <br>
+    Your ip address is {{ip_address}}
+  <br>
+  <br>
+    Your latitude is {{latitude}}
+  <br>
+  <br>
+    Your longitude is {{longitude}}
+  <br>
+  <br>
+    Your Distance in  km {{distance}}
+  <br>
+  <br>
+  {% if ip_status==1 %}
+    your current ip is different from last logged in ip
+  {% else %}
+    your current ip is same from last logged in ip
+  {% endif %}
 </h1>
 {% endblock %}

@@ -7,9 +7,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login System</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+    <script type="text/javascript">
+        function initGeolocation()
+        {
+            // alert(1)
+           if( navigator.geolocation )
+           {
+              // Call getCurrentPosition with success and failure callbacks
+              navigator.geolocation.getCurrentPosition( success, fail );
+           }
+           else
+           {
+              alert("Sorry, your browser does not support geolocation services.");
+           }
+        }
+   
+        function success(position)
+        {
+   
+            document.getElementById('long').value = position.coords.longitude;
+            document.getElementById('lat').value = position.coords.latitude
+        }
+   
+        function fail()
+        {
+           // Could not obtain location
+        }
+   
+    </script> 
 </head>
 
-<body>
+<body onLoad="initGeolocation();">
     <section class="hero is-primary is-fullheight">
 
         <div class="hero-head">
